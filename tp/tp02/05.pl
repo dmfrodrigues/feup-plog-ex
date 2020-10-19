@@ -1,8 +1,18 @@
-e_primo(N) :- integer(N), N >= 2, \+e_composto(N).
-e_composto(N) :- integer(N), N2 is N-1, e_divisivel_por_menor_ou_igual_a(N, N2).
-e_divisivel_por_menor_ou_igual_a(N, M) :- M >= 2, N mod M =:= 0.
-e_divisivel_por_menor_ou_igual_a(N, M) :-
-    M > 2,
-    M2 is M-1,
-    e_divisivel_por_menor_ou_igual_a(N, M2)
-.
+primo(N) :-
+    nao_e_divisivel_por_menor_do_que(N, N).
+
+nao_e_divisivel_por_menor_do_que(_, 2).
+nao_e_divisivel_por_menor_do_que(N, M) :-
+    M1 is M-1,
+    N mod M1 =\= 0,
+    nao_e_divisivel_por_menor_do_que(N, M1).
+
+lista_primos(1, []).
+lista_primos(N, [N|L]) :-
+    primo(N),
+    N1 is N-1,
+    lista_primos(N1, L),
+    !.
+lista_primos(N, L) :-
+    N1 is N-1,
+    lista_primos(N1, L).

@@ -1,0 +1,42 @@
+\documentclass[a4paper]{article}
+
+\usepackage[top=35mm,bottom=35mm,left=25mm,right=25mm]{geometry}
+
+% Graphics and images
+\RequirePackage{graphicx}
+\RequirePackage{tikz}
+\RequirePackage{tikz-qtree}
+\usetikzlibrary{automata, positioning, arrows}
+
+\begin{document}
+\begin{center}
+    \begin{tikzpicture}
+          \Tree 	[.{exec(X, Y)}
+                        [.{p(X, Y)}
+                            [.{q(X), r(Y)}
+                                [.{q(X)}
+                                    {q(a)}
+                                    {q(b)}
+                                ]
+                                [.{r(Y)}
+                                    {r(c)}
+                                    {r(d)}
+                                ]
+                            ]
+                            [.{q(X), r(Y)}
+                                [.{s(X)}
+                                    {s(e)}
+                                ]
+                                [.{r(Y)}
+                                    {r(c)}
+                                    {r(d)}
+                                ]
+                            ]
+                        ]
+                        [.{s(X)}
+                            {s(e)}
+                        ]
+                    ]
+    \end{tikzpicture}
+\end{center}
+\end{document}

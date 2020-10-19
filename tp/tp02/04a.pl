@@ -1,7 +1,11 @@
+/**
+ * factorial(+N, -V)
+ */
+
 factorial(0, 1).
-factorial(N, Valor) :-
+factorial(N, V) :-
     N>0,
     N1 is N-1,
-    factorial(N1, Valor1),
-    Valor is Valor1*N
+    factorial(N1, V1),
+    V is V1*N
 . 
