@@ -12,6 +12,6 @@ max(_, _, Z, Z).
 
 % Item b)
 
-max(X, Y, Z, X):- X>=Y, X>=Z, !.
-max(X, Y, Z, Y):- Y>=X, Y>=Z, !.
+max(X, Y, Z, X):- X=>Y, X=>Z, !.
+max(X, Y, Z, Y):- Y=>X, Y=>Z, !.
 max(_, _, Z, Z).
