@@ -20,4 +20,5 @@
 *.lof
 
 !tp*.pdf
+!plr*.pdf
 !tests/*/*/*.pdf
