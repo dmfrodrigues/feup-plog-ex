@@ -5,4 +5,4 @@
 - **Subjects:** Logic programming
 - **Environment:** SICStus PROLOG
 - **Tools:** PROLOG
-- **Course grade:** ?/20
+- **Course grade:** 19/20
